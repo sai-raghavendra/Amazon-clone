@@ -21,25 +21,27 @@ const Checkout = () => {
   const dispatch = useDispatch();
 
   return (
-    <div className="h-screen bg-amazonclone-background">
-      <div className="min-w-[1000px] max-w-[1500px] m-auto pt-8">
-        <div className="grid grid-cols-8">
-          <div className="col-span-6 bg-white mr-3">
-            <div className="text-2xl xl:text-3xl m-4 ">Shopping Cart</div>
+    <div className="min-h-screen bg-amazonclone-background">
+      <div className="w-full max-w-[1500px] mx-auto pt-4 sm:pt-8 px-2">
+        <div className="grid grid-cols-1 lg:grid-cols-8 gap-4">
+          <div className="lg:col-span-6 bg-white mr-0 lg:mr-3">
+            <div className="text-xl sm:text-2xl xl:text-3xl m-4 ">
+              Shopping Cart
+            </div>
             {products.map((product) => {
               return (
                 <div key={product.id}>
-                  <div className="grid grid-cols-12 divide-y divide-gray-400 mr-4 ">
-                    <div className="col-span-10 grid grid-cols-8 divide-y divide-gray-400">
-                      <div className="col-span-2">
+                  <div className="grid grid-cols-1 sm:grid-cols-12 divide-y divide-gray-400 mr-0 sm:mr-4 ">
+                    <div className="sm:col-span-10 grid grid-cols-1 sm:grid-cols-8 divide-y sm:divide-y-0 divide-gray-400">
+                      <div className="sm:col-span-2">
                         <Link to={`/product/${product.id}`}>
                           <img
-                            className="p-4 m-auto"
+                            className="p-4 m-auto max-h-[120px] sm:max-h-none"
                             src={product.image_small}
                           />
                         </Link>
                       </div>
-                      <div className="col-span-6">
+                      <div className="sm:col-span-6">
                         <div className="font-medium text-black mt-2">
                           <Link to={`/product/${product.id}`}>
                             <ProductDetails product={product} ratings={false} />
@@ -76,7 +78,7 @@ const Checkout = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="col-span-2">
+                    <div className="sm:col-span-2">
                       <div className="text-lg xl:text-xl mt-2 mr-4 font-semibold">
                         {IN_CURRENCY.format(product.price)}
                       </div>
@@ -92,7 +94,7 @@ const Checkout = () => {
               </span>
             </div>
           </div>
-          <div className="col-span-2 bg-white rounded h-[250px] p-7">
+          <div className="lg:col-span-2 bg-white rounded h-[200px] sm:h-[250px] p-4 sm:p-7">
             <div className="text-xs xl:text-sm text-green-800 mb-2">
               Your order qualifies for
               <span className="font-bold">FREE DELIVERY</span>. Delivery Details

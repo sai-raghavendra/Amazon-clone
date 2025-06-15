@@ -3,12 +3,9 @@ import { Carousel, HomePageCard, CarouselCategory, CarouselProducts } from "./";
 const HomePage = () => {
   return (
     <div className="bg-amazonclone-background">
-      <div
-        className="min-w-[1000px] max-w-[1500px] m-auto 
-      "
-      >
+      <div className="w-full max-w-[1500px] mx-auto">
         <Carousel />
-        <div className="grid grid-cols-3 xl:grid-cols-4 -mt-30">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 -mt-10">
           <HomePageCard
             title={"we have suprice for you"}
             img={"../images/home_grid_1.jpg"}
@@ -50,13 +47,19 @@ const HomePage = () => {
             link={"Learn more"}
           />
           <div className="m-3 pt-8">
-            <img className="xl:hidden" src={"../images/banner_image_2.jpg"} />
+            <img
+              className="xl:hidden w-full"
+              src={"../images/banner_image_2.jpg"}
+            />
           </div>
         </div>
         <CarouselProducts />
         <CarouselCategory />
-        <div className="h-[200px]">
-          <img className="h-[100%] m-auto" src={"../images/banner_image.jpg"} />
+        <div className="h-[120px] sm:h-[200px]">
+          <img
+            className="h-full w-full object-cover m-auto"
+            src={"../images/banner_image.jpg"}
+          />
         </div>
       </div>
     </div>

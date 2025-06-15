@@ -32,41 +32,44 @@ const ProductPage = () => {
 
   return (
     product && (
-      <div className="h-screen bg-amazonclone-background">
-        <div className="min-w-[1000px] max-w-[1500px] m-auto p-4  ">
-          <div className="grid grid-cols-10 gap-2">
-            <div className="col-span-3 p-8 rounded bg-white m-auto">
-              <img src={`${product.image}`} />
+      <div className="min-h-screen bg-amazonclone-background">
+        <div className="w-full max-w-[1500px] mx-auto p-2 sm:p-4">
+          <div className="grid grid-cols-1 md:grid-cols-10 gap-2">
+            <div className="md:col-span-3 p-4 sm:p-8 rounded bg-white m-auto">
+              <img
+                className="w-full max-h-[300px] object-contain"
+                src={`${product.image}`}
+              />
             </div>
-            <div className="col-span-5 p-4 rounded bg-white divide-y divide-gray-400">
+            <div className="md:col-span-5 p-2 sm:p-4 rounded bg-white divide-y divide-gray-400">
               <div className="mb-3">
                 <ProductDetails product={product} ratings={true} />
               </div>
-              <div className="text-base xl:text-lg at-3">
+              <div className="text-sm sm:text-base xl:text-lg at-3">
                 {product.description}
               </div>
             </div>
-            <div className="col-span-2 p-4 bg-white">
-              <div className="text-xl xl:text-2xl text-right text-red-700 font-semibold">
+            <div className="md:col-span-2 p-2 sm:p-4 bg-white">
+              <div className="text-lg sm:text-xl xl:text-2xl text-right text-red-700 font-semibold">
                 {IN_CURRENCY.format(product.price)}
               </div>
-              <div className="text-base xl:text-lg text-right text-gray-500  font-semibold">
+              <div className="text-xs sm:text-base xl:text-lg text-right text-gray-500 font-semibold">
                 {" "}
                 MRP:
                 <span className="line-through">
                   {IN_CURRENCY.format(product.oldPrice)}
                 </span>
               </div>
-              <div className="text-sm xl:text-base text-blue-500 font-semibold mt-3">
+              <div className="text-xs sm:text-sm xl:text-base text-blue-500 font-semibold mt-3">
                 Free Return
               </div>
-              <div className="text-sm xl:text-base  text-blue-500 font-semibold mt-1">
+              <div className="text-xs sm:text-sm xl:text-base text-blue-500 font-semibold mt-1">
                 Free Delivery
               </div>
-              <div className="text-base xl:text-lg text-green-700 font-semibold mt-1">
+              <div className="text-xs sm:text-base xl:text-lg text-green-700 font-semibold mt-1">
                 In Stock
               </div>
-              <div className="text-base xl:text-lg mt-1 ">
+              <div className="text-xs sm:text-base xl:text-lg mt-1 ">
                 Quantity:
                 <select
                   onChange={(e) => setQuantity(e.target.value)}

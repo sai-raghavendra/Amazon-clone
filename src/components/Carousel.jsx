@@ -5,7 +5,7 @@ import "swiper/css/navigation";
 
 const Carousel = () => {
   return (
-    <div className="h-[300px] bg-white">
+    <div className="h-[160px] sm:h-[220px] md:h-[300px] bg-white">
       <Swiper
         loop={true}
         spaceBetween={0}
@@ -14,7 +14,7 @@ const Carousel = () => {
         autoplay={{
           delay: 4500,
         }}
-        className="h-[100%]"
+        className="h-full"
       >
         <SwiperSlide>
           <img src={"../images/carousel_1.jpg"} />
@@ -34,7 +34,7 @@ const Carousel = () => {
           <img src={"../images/carousel_5.jpg"} />
         </SwiperSlide>
       </Swiper>
-      <div className="h-[50%] bg-gradient-to-b from-stone-900" />
+      <div className="h-[30%] sm:h-[50%] bg-gradient-to-b from-stone-900" />
     </div>
   );
 };
